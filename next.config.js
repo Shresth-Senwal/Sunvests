@@ -3,6 +3,9 @@ const nextConfig = {
   // Core settings - stable and production-ready
   reactStrictMode: true,
   
+  // Netlify deployment configuration
+  trailingSlash: false,
+  
   // Experimental features for performance
   experimental: {
     optimizeCss: true,
