@@ -6,10 +6,10 @@ The deployment issue you're experiencing is due to Netlify not finding the Next.
 
 ### 1. Install Dependencies
 
-First, install the required Netlify plugin:
+The required Netlify plugin has already been installed:
 
 ```bash
-npm install --save-dev @netlify/plugin-nextjs@^5.7.2
+# Already installed: @netlify/plugin-nextjs@^5.11.2
 ```
 
 ### 2. Netlify Site Configuration

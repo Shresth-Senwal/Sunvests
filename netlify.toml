@@ -6,33 +6,14 @@
   publish = ".next"
 
 [build.environment]
-  # Node.js version
   NODE_VERSION = "18"
-  
-  # Next.js specific environment variables
   NEXT_TELEMETRY_DISABLED = "1"
-  
-  # Build optimization
-  NODE_OPTIONS = "--max-old-space-size=4096"
 
 # Netlify-specific Next.js plugin
 [[plugins]]
   package = "@netlify/plugin-nextjs"
 
-# Handle Next.js API routes
-[[redirects]]
-  from = "/api/*"
-  to = "/.netlify/functions/___netlify-handler"
-  status = 200
-
-# Handle Next.js pages and static files
-[[redirects]]
-  from = "/_next/static/*"
-  to = "/_next/static/:splat"
-  status = 200
-  headers = {Cache-Control = "public, max-age=31536000, immutable"}
-
-# Handle all other routes for client-side routing
+# Handle all routes for Next.js App Router
 [[redirects]]
   from = "/*"
   to = "/index.html"
@@ -60,8 +41,4 @@
 [[headers]]
   for = "/fonts/*"
   [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-
-# Edge functions configuration
-[edge_functions]
-  directory = "netlify/edge-functions" 
+    Cache-Control = "public, max-age=31536000, immutable" 
