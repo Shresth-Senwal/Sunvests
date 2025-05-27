@@ -1,0 +1,42 @@
+{
+  "name": "sunvest-consultancy-website",
+  "version": "0.1.0",
+  "private": true,
+  "description": "SUNVEST CONSULTANCY LLP - IT Services, Solar Power Solutions, and Investment & Financial Services",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "format": "prettier --write .",
+    "audit": "npm audit --audit-level=moderate",
+    "audit:fix": "npm audit fix",
+    "security:check": "npm audit && npm outdated",
+    "analyze": "cross-env ANALYZE=true npm run build",
+    "type-check": "tsc --noEmit",
+    "clean": "rimraf .next"
+  },
+  "dependencies": {
+    "@heroicons/react": "^2.2.0",
+    "critters": "^0.0.23",
+    "framer-motion": "^12.12.1",
+    "next": "^15.3.2",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@types/next": "^8.0.7",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "cross-env": "^7.0.3",
+    "eslint": "^9",
+    "eslint-config-next": "15.1.8",
+    "postcss": "^8",
+    "prettier": "^3.0.0",
+    "rimraf": "^5.0.0",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
+  }
+}

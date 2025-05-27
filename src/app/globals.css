@@ -1,0 +1,988 @@
+/* Fonts are loaded via next/font/google for optimal performance */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Critical CSS - Above the fold styles */
+@layer base {
+  
+  /* Critical layout styles */
+  html {
+    font-family: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+  
+  /* Hero section critical styles */
+  .hero-section {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1e3a8a 0%, #3730a3 50%, #7c3aed 100%);
+  }
+  
+  /* Navigation critical styles */
+  .nav-critical {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.95);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+}
+
+:root {
+  /* Unified Color System */
+  --primary: #1e40af; /* Blue 800 - Deep, professional blue */
+  --rgb-primary: 30, 64, 175; 
+  --primary-dark: #1e3a8a; /* Blue 900 - Darker variant */
+  --primary-light: #3b82f6; /* Blue 500 - Lighter variant */
+  
+  --secondary: #f0f9ff; /* Sky 50 - Ultra light background */
+  --secondary-dark: #e0f2fe; /* Sky 100 - Light background */
+  
+  --accent: #06b6d4; /* Cyan 500 - Modern accent */
+  --accent-light: #22d3ee; /* Cyan 400 - Light accent */
+  --accent-dark: #0891b2; /* Cyan 600 - Dark accent */
+  
+  --background: #ffffff; /* Pure white */
+  --background-alt: #f8fafc; /* Slate 50 - Alternative background */
+  --background-gradient: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 50%, #f8fafc 100%);
+  
+  --text: #0f172a; /* Slate 900 - Primary text */
+  --text-light: #334155; /* Slate 700 - Secondary text */
+  --text-muted: #64748b; /* Slate 500 - Muted text */
+  --text-subtle: #94a3b8; /* Slate 400 - Subtle text */
+  
+  --border: #cbd5e1; /* Slate 300 - Standard border */
+  --border-light: #e2e8f0; /* Slate 200 - Light border */
+  --border-dark: #94a3b8; /* Slate 400 - Dark border */
+  
+  /* Enhanced Shadow System */
+  --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  
+  /* Status Colors */
+  --success: #10b981; /* Emerald 500 */
+  --success-light: #34d399; /* Emerald 400 */
+  --danger: #ef4444; /* Red 500 */
+  --danger-light: #f87171; /* Red 400 */
+  --warning: #f59e0b; /* Amber 500 */
+  --warning-light: #fbbf24; /* Amber 400 */
+  --info: #3b82f6; /* Blue 500 */
+  --info-light: #60a5fa; /* Blue 400 */
+
+  /* Service-specific Colors */
+  --it-primary: #3b82f6; /* Blue 500 */
+  --it-secondary: #8b5cf6; /* Violet 500 */
+  --it-light: #dbeafe; /* Blue 100 */
+  --it-gradient: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #06b6d4 100%);
+  
+  --solar-primary: #f59e0b; /* Amber 500 */
+  --solar-secondary: #f97316; /* Orange 500 */
+  --solar-light: #fef3c7; /* Amber 100 */
+  --solar-gradient: linear-gradient(135deg, #f59e0b 0%, #f97316 50%, #eab308 100%);
+  
+  --finance-primary: #10b981; /* Emerald 500 */
+  --finance-secondary: #059669; /* Emerald 600 */
+  --finance-light: #d1fae5; /* Emerald 100 */
+  --finance-gradient: linear-gradient(135deg, #10b981 0%, #059669 50%, #047857 100%);
+
+  /* Chat-specific colors */
+  --chat-user-bg: var(--primary); 
+  --chat-user-text: #ffffff; 
+  --chat-bot-bg: var(--secondary);  
+  --chat-bot-text: var(--text); 
+  --chat-header-bg: var(--primary); 
+  --chat-header-text: #ffffff; 
+  --chat-window-bg: var(--background); 
+  --chat-input-bg: var(--background);
+  
+  /* Animation Variables */
+  --transition-fast: 150ms ease-in-out;
+  --transition-normal: 250ms ease-in-out;
+  --transition-slow: 350ms ease-in-out;
+  --ease-smooth: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  
+  /* Border Radius System */
+  --radius-xs: 0.25rem; /* 4px */
+  --radius-sm: 0.375rem; /* 6px */
+  --radius-md: 0.5rem; /* 8px */
+  --radius-lg: 0.75rem; /* 12px */
+  --radius-xl: 1rem; /* 16px */
+  --radius-2xl: 1.5rem; /* 24px */
+  --radius-3xl: 2rem; /* 32px */
+  --radius-full: 9999px;
+  
+  /* Spacing System */
+  --space-xs: 0.25rem; /* 4px */
+  --space-sm: 0.5rem; /* 8px */
+  --space-md: 1rem; /* 16px */
+  --space-lg: 1.5rem; /* 24px */
+  --space-xl: 2rem; /* 32px */
+  --space-2xl: 3rem; /* 48px */
+  --space-3xl: 4rem; /* 64px */
+  
+  /* Typography Scale */
+  --text-xs: 0.75rem; /* 12px */
+  --text-sm: 0.875rem; /* 14px */
+  --text-base: 1rem; /* 16px */
+  --text-lg: 1.125rem; /* 18px */
+  --text-xl: 1.25rem; /* 20px */
+  --text-2xl: 1.5rem; /* 24px */
+  --text-3xl: 1.875rem; /* 30px */
+  --text-4xl: 2.25rem; /* 36px */
+  --text-5xl: 3rem; /* 48px */
+  --text-6xl: 3.75rem; /* 60px */
+  --text-7xl: 4.5rem; /* 72px */
+  --text-8xl: 6rem; /* 96px */
+}
+
+/* Enhanced Typography System */
+body {
+  background-color: var(--background);
+  color: var(--text);
+  font-family: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  line-height: 1.6;
+  font-size: var(--text-base);
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Standardized Heading System */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  letter-spacing: -0.025em;
+  font-weight: 700; 
+  color: var(--text);
+  margin-bottom: 0.75rem;
+  line-height: 1.2;
+}
+
+h1 { 
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+h2 { 
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 700;
+}
+h3 { 
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 600;
+}
+h4 { 
+  font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+  font-weight: 600;
+}
+h5 {
+  font-size: var(--text-xl);
+  font-weight: 600;
+}
+h6 {
+  font-size: var(--text-lg);
+  font-weight: 600;
+}
+
+p { 
+  margin-bottom: 1rem; 
+  color: var(--text-light); 
+  line-height: 1.7;
+}
+
+a { 
+  color: var(--accent); 
+  text-decoration: none; 
+  transition: var(--transition-fast);
+}
+a:hover { 
+  color: var(--accent-dark); 
+}
+
+/* ====================================================
+   STANDARDIZED BUTTON SYSTEM
+   ==================================================== */
+
+.btn {
+  @apply inline-flex items-center justify-center gap-2 text-center font-semibold
+         transition-all duration-200 ease-in-out
+         focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-opacity-50
+         disabled:opacity-50 disabled:cursor-not-allowed
+         select-none;
+  backface-visibility: hidden; 
+  will-change: transform, box-shadow; 
+  min-height: 44px; /* Accessibility - minimum touch target */
+  padding: 0.75rem 1.5rem; /* 12px 24px */
+  border-radius: var(--radius-xl);
+  border: 2px solid transparent;
+  font-size: var(--text-base);
+  line-height: 1.5;
+  text-decoration: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Primary Button */
+.btn-primary {
+  @apply btn text-white focus:ring-blue-500;
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+  box-shadow: var(--shadow-sm);
+}
+.btn-primary:hover:not(:disabled) {
+  background: linear-gradient(135deg, var(--accent-light) 0%, var(--accent) 100%);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-1px) scale(1.02);
+}
+.btn-primary:active:not(:disabled) {
+  transform: translateY(0) scale(0.98);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Secondary Button */
+.btn-secondary {
+  @apply btn focus:ring-blue-500;
+  background-color: var(--background);
+  border-color: var(--border-dark);
+  color: var(--text-light);
+  box-shadow: var(--shadow-sm);
+}
+.btn-secondary:hover:not(:disabled) {
+  background-color: var(--secondary);
+  border-color: var(--accent);
+  color: var(--accent);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px) scale(1.02);
+}
+.btn-secondary:active:not(:disabled) {
+  transform: translateY(0) scale(0.98);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Outline Button */
+.btn-outline {
+  @apply btn focus:ring-blue-500;
+  background-color: transparent;
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.btn-outline:hover:not(:disabled) {
+  background-color: var(--accent);
+  color: white;
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px) scale(1.02);
+}
+.btn-outline:active:not(:disabled) {
+  transform: translateY(0) scale(0.98);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Ghost Button */
+.btn-ghost {
+  @apply btn focus:ring-slate-500;
+  background-color: transparent;
+  color: var(--text-muted);
+  border-color: transparent;
+}
+.btn-ghost:hover:not(:disabled) {
+  background-color: var(--secondary);
+  color: var(--text);
+}
+.btn-ghost:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+/* Button Sizes */
+.btn-sm {
+  min-height: 36px;
+  padding: 0.5rem 1rem; /* 8px 16px */
+  font-size: var(--text-sm);
+}
+
+.btn-lg {
+  min-height: 52px;
+  padding: 1rem 2rem; /* 16px 32px */
+  font-size: var(--text-lg);
+}
+
+.btn-xl {
+  min-height: 60px;
+  padding: 1.25rem 2.5rem; /* 20px 40px */
+  font-size: var(--text-xl);
+}
+
+/* Service-specific Button Variants */
+.btn-it {
+  background: linear-gradient(135deg, var(--it-primary) 0%, var(--it-secondary) 100%);
+}
+.btn-it:hover:not(:disabled) {
+  background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+}
+
+.btn-solar {
+  background: linear-gradient(135deg, var(--solar-primary) 0%, var(--solar-secondary) 100%);
+}
+.btn-solar:hover:not(:disabled) {
+  background: linear-gradient(135deg, #f59e0b 0%, #ea580c 100%);
+}
+
+.btn-finance {
+  background: linear-gradient(135deg, var(--finance-primary) 0%, var(--finance-secondary) 100%);
+}
+.btn-finance:hover:not(:disabled) {
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
+}
+
+/* ====================================================
+   STANDARDIZED FORM SYSTEM
+   ==================================================== */
+
+.form-group {
+  margin-bottom: var(--space-lg);
+}
+
+.form-label {
+  @apply block text-sm font-semibold mb-2;
+  color: var(--text);
+  font-size: var(--text-sm);
+  line-height: 1.5;
+}
+
+.form-input, .form-textarea, .form-select { 
+  @apply w-full bg-white text-slate-900
+         transition-all duration-200 ease-in-out
+         focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent
+         placeholder:text-slate-400;
+  padding: 0.75rem 1rem; /* 12px 16px */
+  border-radius: var(--radius-xl);
+  border: 2px solid var(--border);
+  box-shadow: var(--shadow-xs);
+  font-size: var(--text-base);
+  line-height: 1.5;
+  color: var(--text);
+}
+
+.form-input:focus, .form-textarea:focus, .form-select:focus {
+  box-shadow: var(--shadow-sm), 0 0 0 3px rgba(59, 130, 246, 0.1);
+  border-color: var(--accent);
+}
+
+.form-input::placeholder, .form-textarea::placeholder {
+  color: var(--text-subtle);
+  opacity: 1;
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form-error {
+  color: var(--danger);
+  font-size: var(--text-sm);
+  margin-top: var(--space-sm);
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+/* ====================================================
+   STANDARDIZED CARD SYSTEM
+   ==================================================== */
+
+.card { 
+  @apply bg-white border transition-all duration-200;
+  border-color: var(--border);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-sm);
+  padding: var(--space-lg);
+  isolation: isolate;
+  contain: layout style;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+.card-elevated {
+  @apply card;
+  box-shadow: var(--shadow-lg);
+}
+
+.card-interactive {
+  @apply card cursor-pointer;
+}
+.card-interactive:hover {
+  box-shadow: var(--shadow-xl);
+  transform: translateY(-4px) scale(1.01);
+}
+
+.card-header {
+  margin-bottom: var(--space-lg);
+  border-bottom: 1px solid var(--border-light);
+  padding-bottom: var(--space-md);
+}
+
+.card-title {
+  font-size: var(--text-xl);
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: var(--space-sm);
+}
+
+.card-content {
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+.card-footer {
+  margin-top: var(--space-lg);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--border-light);
+}
+
+/* Service-specific Card Variants */
+.card-it {
+  background: linear-gradient(135deg, var(--it-light) 0%, var(--background) 100%);
+  border-color: rgba(59, 130, 246, 0.2);
+}
+
+.card-solar {
+  background: linear-gradient(135deg, var(--solar-light) 0%, var(--background) 100%);
+  border-color: rgba(245, 158, 11, 0.2);
+}
+
+.card-finance {
+  background: linear-gradient(135deg, var(--finance-light) 0%, var(--background) 100%);
+  border-color: rgba(16, 185, 129, 0.2);
+}
+
+/* ====================================================
+   STANDARDIZED NAVIGATION SYSTEM
+   ==================================================== */
+
+.nav-link {
+  @apply relative transition-all duration-200 ease-in-out;
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-lg);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--text-light);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.nav-link:hover {
+  color: var(--accent); 
+  background-color: var(--secondary);
+  transform: translateY(-1px);
+}
+
+.nav-link-active { 
+  color: var(--accent);
+  background-color: var(--secondary);
+  font-weight: 600; 
+}
+
+.dropdown-menu {
+  @apply bg-white border border-slate-200 overflow-hidden;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-xl);
+  backdrop-filter: blur(8px);
+  padding: var(--space-sm);
+}
+
+.dropdown-item {
+  @apply block transition-all duration-150 ease-in-out;
+  padding: var(--space-md) var(--space-lg);
+  border-radius: var(--radius-lg);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--text-light);
+  text-decoration: none;
+}
+
+.dropdown-item:hover {
+  background-color: var(--secondary);
+  color: var(--accent);
+  transform: translateX(4px);
+}
+
+/* ====================================================
+   UTILITY CLASSES
+   ==================================================== */
+
+.container-custom { 
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8; 
+}
+
+.section { 
+  padding: var(--space-3xl) 0;
+}
+
+.section-sm {
+  padding: var(--space-2xl) 0;
+}
+
+.section-lg {
+  padding: 5rem 0;
+}
+
+.gradient-text { 
+  @apply bg-clip-text text-transparent;
+  background-image: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+}
+
+.gradient-bg {
+  background: var(--background-gradient);
+}
+
+.gradient-bg-it {
+  background: var(--it-gradient);
+}
+
+.gradient-bg-solar {
+  background: var(--solar-gradient);
+}
+
+.gradient-bg-finance {
+  background: var(--finance-gradient);
+}
+
+/* Icon System */
+.icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.icon-sm {
+  width: 1rem;
+  height: 1rem;
+}
+
+.icon-lg {
+  width: 2rem;
+  height: 2rem;
+}
+
+.icon-xl {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+/* ====================================================
+   SCROLLBAR STYLING
+   ==================================================== */
+
+html { 
+  scroll-behavior: smooth; 
+}
+
+::-webkit-scrollbar { 
+  width: 8px; 
+  height: 8px; 
+}
+::-webkit-scrollbar-track { 
+  background: var(--secondary); 
+  border-radius: 10px; 
+}
+::-webkit-scrollbar-thumb { 
+  background: var(--text-subtle); 
+  border-radius: 10px; 
+}
+::-webkit-scrollbar-thumb:hover { 
+  background: var(--text-muted); 
+}
+
+/* ====================================================
+   CHAT SYSTEM STYLING
+   ==================================================== */
+
+.chat-window {
+  @apply bg-white flex flex-col;
+  border: 1px solid var(--border-light); 
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-2xl);
+  background-color: var(--background);
+}
+
+.chat-header {
+  @apply p-4 flex justify-between items-center;
+  background: var(--primary);
+  color: var(--chat-header-text);
+  font-weight: 700;
+  border-radius: var(--radius-2xl) var(--radius-2xl) 0 0;
+  /* Enhanced contrast and text clarity */
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  min-height: 80px; /* Ensure adequate header height */
+}
+
+/* Enhanced header text styling for better readability */
+.chat-header h3 {
+  font-size: 1.25rem; /* Increased from text-lg */
+  font-weight: 700;
+  line-height: 1.3;
+  margin: 0;
+  color: #ffffff;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+  letter-spacing: -0.025em;
+}
+
+.chat-header p {
+  font-size: 0.875rem; /* Increased from text-sm */
+  font-weight: 500;
+  margin: 0;
+  margin-top: 2px;
+  color: rgba(255, 255, 255, 0.95); /* Reduced opacity reduction */
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Ensure close button has good contrast */
+.chat-header button {
+  color: #ffffff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.chat-bubble {
+  @apply max-w-[85%] py-3 px-4 shadow-sm leading-relaxed relative; 
+  word-wrap: break-word;
+  border-radius: var(--radius-2xl);
+  font-size: 0.875rem; /* Increased from text-sm */
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+.chat-bubble-user {
+  @apply chat-bubble;
+  background: var(--chat-user-bg);
+  color: var(--chat-user-text);
+  font-weight: 600;
+  border-bottom-right-radius: var(--radius-sm);
+  /* Enhanced text clarity for user messages */
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.chat-bubble-bot {
+  @apply chat-bubble;
+  background-color: var(--chat-bot-bg);
+  color: var(--chat-bot-text);
+  border: 1px solid var(--border-light);
+  font-weight: 500;
+  border-bottom-left-radius: var(--radius-sm);
+  /* Enhanced contrast for bot messages */
+  color: #1f2937; /* Darker text for better contrast */
+}
+
+/* Improve timestamp readability */
+.chat-bubble .text-xs {
+  font-size: 0.75rem;
+  font-weight: 500;
+  opacity: 0.8; /* Better than 0.6 for readability */
+}
+
+.chat-input {
+  @apply w-full transition-all duration-200 ease-in-out
+         focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent;
+  padding: var(--space-md);
+  border-radius: var(--radius-xl);
+  background-color: var(--chat-input-bg);
+  color: var(--text);
+  border: 2px solid var(--border);
+  font-size: 0.875rem; /* Improved input text size */
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.chat-input::placeholder {
+  color: var(--text-muted);
+  opacity: 1;
+  font-weight: 500;
+}
+
+.chat-send-button {
+  @apply flex items-center justify-center transition-all duration-200 ease-in-out;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: var(--radius-xl);
+  background: var(--primary);
+  color: var(--background);
+}
+
+.chat-send-button:hover:not(:disabled) {
+  background: var(--primary-dark);
+  transform: scale(1.05);
+  box-shadow: var(--shadow-lg);
+}
+
+.chat-send-button:disabled {
+  background: var(--text-subtle);
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ====================================================
+   CHAT RESPONSIVE & ACCESSIBILITY IMPROVEMENTS
+   ==================================================== */
+
+/* Mobile-specific chat improvements */
+@media (max-width: 640px) {
+  .chat-header {
+    padding: 1rem;
+    min-height: 70px;
+  }
+  
+  .chat-header h3 {
+    font-size: 1.125rem; /* Slightly smaller on mobile but still readable */
+  }
+  
+  .chat-header p {
+    font-size: 0.8125rem;
+  }
+  
+  .chat-bubble {
+    font-size: 0.8125rem; /* Slightly smaller on mobile */
+    padding: 0.75rem 1rem;
+  }
+  
+  .chat-input {
+    font-size: 1rem; /* Prevent zoom on iOS */
+    padding: 0.875rem;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .chat-header {
+    background: #1a365d; /* Darker blue for high contrast */
+    text-shadow: none;
+  }
+  
+  .chat-header h3,
+  .chat-header p,
+  .chat-header button {
+    color: #ffffff;
+    text-shadow: none;
+  }
+  
+  .chat-bubble-bot {
+    color: #000000; /* Pure black for high contrast */
+    border-color: #000000;
+  }
+  
+  .chat-bubble-user {
+    background: #1a365d;
+    text-shadow: none;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .chat-bubble .animate-bounce {
+    animation: none;
+  }
+  
+  .chat-send-button:hover:not(:disabled) {
+    transform: none;
+  }
+}
+
+/* Focus states for better keyboard navigation */
+.chat-input:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.chat-send-button:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
+
+.chat-header button:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.5);
+  outline-offset: 2px;
+}
+
+/* ====================================================
+   CONTACT CARD ISOLATION
+   ==================================================== */
+
+.contact-card-container {
+  isolation: isolate;
+  contain: layout style;
+  position: relative;
+  z-index: 1;
+}
+
+.contact-card-content {
+  isolation: isolate;
+  contain: layout style;
+  position: relative;
+  z-index: 2;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+/* ====================================================
+   SERVICE-SPECIFIC CLASSES
+   ==================================================== */
+
+.service-it {
+  --service-primary: var(--it-primary);
+  --service-light: var(--it-light);
+}
+
+.service-solar {
+  --service-primary: var(--solar-primary);
+  --service-light: var(--solar-light);
+}
+
+.service-finance {
+  --service-primary: var(--finance-primary);
+  --service-light: var(--finance-light);
+}
+
+/* ====================================================
+   ANIMATION CLASSES
+   ==================================================== */
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.6s ease-out;
+}
+
+.animate-pulse-soft {
+  animation: pulseSoft 2s ease-in-out infinite;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { 
+    opacity: 0; 
+    transform: translateY(30px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+@keyframes pulseSoft {
+  0%, 100% { 
+    opacity: 0.7; 
+    transform: scale(1);
+  }
+  50% { 
+    opacity: 1; 
+    transform: scale(1.05);
+  }
+}
+
+/* ====================================================
+   RESPONSIVE DESIGN
+   ==================================================== */
+
+@media (max-width: 640px) {
+  .btn {
+    min-height: 40px;
+    padding: 0.5rem 1rem; /* 8px 16px */
+    font-size: var(--text-sm);
+  }
+  
+  .container-custom {
+    @apply px-3;
+  }
+  
+  .section {
+    padding: var(--space-2xl) 0;
+  }
+  
+  .card {
+    padding: var(--space-md);
+  }
+}
+
+@media (max-width: 768px) {
+  .btn-lg {
+    min-height: 48px;
+    padding: 0.875rem 1.5rem;
+    font-size: var(--text-base);
+  }
+  
+  .btn-xl {
+    min-height: 52px;
+    padding: 1rem 2rem;
+    font-size: var(--text-lg);
+  }
+}
+
+/* ====================================================
+   ACCESSIBILITY ENHANCEMENTS
+   ==================================================== */
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --border: #000000;
+    --text-light: var(--text);
+    --border-dark: #000000;
+  }
+  
+  .btn {
+    border-width: 3px;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .contact-card-content {
+    transform: none !important;
+  }
+  
+  .btn:hover {
+    transform: none !important;
+  }
+  
+  .card:hover {
+    transform: none !important;
+  }
+}
+
+/* Focus states for keyboard navigation */
+.btn:focus-visible,
+.form-input:focus-visible,
+.form-textarea:focus-visible,
+.form-select:focus-visible,
+.nav-link:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Print styles */
+@media print {
+  .btn {
+    background: none !important;
+    color: var(--text) !important;
+    border: 2px solid var(--text) !important;
+    box-shadow: none !important;
+  }
+}

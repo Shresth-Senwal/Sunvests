@@ -1,0 +1,25 @@
+User-agent: *
+Allow: /
+
+# Allow all crawlers to access CSS and JS files for better rendering
+Allow: /_next/static/
+Allow: /images/
+Allow: /fonts/
+
+# Disallow crawling of sensitive or unnecessary paths
+Disallow: /api/
+Disallow: /_next/webpack-hmr
+Disallow: /test-results/
+
+# Sitemap location
+Sitemap: https://www.sunvests.com/sitemap.xml
+
+# Crawl delay (optional - be respectful to search engines)
+Crawl-delay: 1
+
+# Allow important pages
+Allow: /services/
+
+# Block specific bots if needed
+# User-agent: BadBot
+# Disallow: / 
