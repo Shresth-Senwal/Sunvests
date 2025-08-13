@@ -427,7 +427,7 @@ export const IMAGES = {
   },
   
   TEAM: {
-    CHAIRMAN: '/images/chairman-chandrakant-mishra.jpg',
+  CHAIRMAN: '/images/chairman-chandrakant-mishra.png',
   }
 };
 
