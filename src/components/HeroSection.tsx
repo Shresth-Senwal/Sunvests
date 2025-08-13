@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import Image from 'next/image';
 import { 
   heroVariants, 
   heroStagger, 
@@ -102,13 +101,11 @@ const HeroSection: React.FC<HeroSectionProps> = ({
         initial="initial"
         animate="animate"
       >
-        <Image
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
           src={backgroundImage}
           alt={backgroundAlt}
-          fill
-          className="object-cover"
-          priority
-          quality={90}
+          style={{ width: '100%', height: '100%', objectFit: 'cover', position: 'absolute', inset: 0 }}
         />
       </motion.div>
       
