@@ -670,15 +670,12 @@ export default function Home() {
                 whileHover={{ scale: 1.05 }}
               >
                 <div className="w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden shadow-xl">
-                  <Image
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
                     src={IMAGES.TEAM.CHAIRMAN}
                     alt={`${COMPANY_INFO.chairman} - Chairman of SUNVEST CONSULTANCY LLP`}
-                    width={224}
-                    height={224}
                     className="w-full h-full object-cover"
-                    sizes="(max-width: 768px) 192px, 224px"
                     loading="lazy"
-                    {...optimizedImageProps}
                   />
                 </div>
               </motion.div>
