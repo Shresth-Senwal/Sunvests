@@ -45,7 +45,7 @@ interface HeroSectionProps {
 }
 
 const HeroSection: React.FC<HeroSectionProps> = ({
-  backgroundImage,
+  backgroundImage = '/images/chairman-chandrakant-mishra.png',
   backgroundAlt,
   gradientOverlay,
   theme = 'default',
