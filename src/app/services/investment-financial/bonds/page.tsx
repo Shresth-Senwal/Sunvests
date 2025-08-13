@@ -482,7 +482,7 @@ const BondsPage = () => {
               <Link href="tel:+919412079608" className="btn-secondary bg-white text-[var(--primary)] hover:bg-gray-100">
                 Call +91 94120 79608
               </Link>
-              <Link href="mailto:info@sunvests.com" className="btn-secondary border-white text-white hover:bg-white hover:text-[var(--primary)]">
+              <Link href="mailto:bck@sunvests.com" className="btn-secondary border-white text-white hover:bg-white hover:text-[var(--primary)]">
                 Email Us
               </Link>
             </div>

@@ -356,7 +356,7 @@ export default function InvestmentFinancialPage() {
                 Call +91 94120 79608
               </Link>
               <Link 
-                href="mailto:info@sunvests.com" 
+                href="mailto:bck@sunvests.com" 
                 className="border-2 border-white text-white hover:bg-white hover:text-green-900 px-8 py-4 rounded-2xl font-semibold transition-all duration-300"
               >
                 Email Us

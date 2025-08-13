@@ -162,7 +162,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   '@type': 'ContactPoint',
                   telephone: '+91-94120-79608',
                   contactType: 'customer service',
-                  email: 'info@sunvests.com',
+                  email: 'bck@sunvests.com',
                   areaServed: 'IN',
                   availableLanguage: ['English', 'Hindi'],
                 }
@@ -231,7 +231,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               name: 'SUNVEST CONSULTANCY LLP',
               image: 'https://www.sunvests.com/logo.svg',
               telephone: '+91-94120-79608',
-              email: 'info@sunvests.com',
+              email: 'bck@sunvests.com',
               address: {
                 '@type': 'PostalAddress',
                 streetAddress: 'H. No. 89, Vasant Vihar, Phase II',
@@ -292,3 +292,4 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     </html>
   );
 }
+

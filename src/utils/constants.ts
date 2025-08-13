@@ -18,7 +18,7 @@ export const COMPANY_INFO = {
 // ====================================================
 
 export const CONTACT_INFO = {
-  email: 'info@sunvests.com',
+  email: 'bck@sunvests.com',
   phone: '+91 94120 79608',
   address: 'H. No. 89, Vasant Vihar, Phase II, Dehradun - 248001, Uttarakhand, India',
   linkedin: 'https://linkedin.com/company/sunvest-consultancy',

@@ -80,7 +80,7 @@ function validateInput(input: string): { valid: boolean; error?: string } {
   const spamPatterns = [
     /(.)\1{10,}/g, // Repeated characters
     /http[s]?:\/\//gi, // URLs
-    /\b(?:buy|sale|discount|offer|deal|click|visit|website)\b/gi, // Spam keywords
+    /\b(?:buy now|sale now|discount now|click here|visit now|website link)\b/gi, // Spam keywords (more specific)
     /[0-9]{10,}/g, // Long numbers (phone numbers, etc.)
   ];
   
@@ -306,3 +306,4 @@ export async function PATCH() {
     }
   );
 }
+

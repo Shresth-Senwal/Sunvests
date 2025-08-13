@@ -9,3 +9,4 @@ export interface ChatbotApiResponse {
   category?: string;     // The category of the response, if available
   // We might add more fields later, e.g., for suggesting follow-up questions
 }
+

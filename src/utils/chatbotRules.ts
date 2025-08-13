@@ -41,7 +41,7 @@ export const chatbotRules: ChatbotRule[] = [
     },
     {
         patterns: ['contact', 'contact information', 'phone number', 'email address', 'how to reach you', 'talk to someone', 'human'],
-        response: "You can reach SUNVEST CONSULTANCY LLP through:\n\n• **Email:** info@sunvests.com\n• **Phone:** +91 94120 79608\n• **Address:** H. No. 89, Vasant Vihar, Phase II, Dehradun - 248001, Uttarakhand, India\n• **LinkedIn:** Connect with us on LinkedIn\n• **Website:** sunvests.com\n\nOur team is ready to assist you!",
+        response: "You can reach SUNVEST CONSULTANCY LLP through:\n\n• **Email:** bck@sunvests.com\n• **Phone:** +91 94120 79608\n• **Address:** H. No. 89, Vasant Vihar, Phase II, Dehradun - 248001, Uttarakhand, India\n• **LinkedIn:** Connect with us on LinkedIn\n• **Website:** sunvests.com\n\nOur team is ready to assist you!",
         category: 'company'
     },
     {
@@ -101,14 +101,14 @@ export const chatbotRules: ChatbotRule[] = [
     // Pricing
     {
         patterns: ['pricing', 'cost', 'how much', 'quote', 'estimate', 'rates', 'packages', 'plans'],
-        response: "Our pricing is customized based on specific requirements and scope:\n\n• **IT Services:** Varies by project complexity and technology requirements\n• **Solar Power:** Depends on system size, location, and installation type\n• **Financial Services:** Transparent fee structures based on services and portfolio size\n\nFor detailed quotes, please contact us at info@sunvests.com or +91 94120 79608. We provide comprehensive assessments and transparent pricing.",
+        response: "Our pricing is customized based on specific requirements and scope:\n\n• **IT Services:** Varies by project complexity and technology requirements\n• **Solar Power:** Depends on system size, location, and installation type\n• **Financial Services:** Transparent fee structures based on services and portfolio size\n\nFor detailed quotes, please contact us at bck@sunvests.com or +91 94120 79608. We provide comprehensive assessments and transparent pricing.",
         category: 'pricing'
     },
 
     // Support & Technical
     {
         patterns: ['support', 'help', 'technical issue', 'problem', 'error', 'not working', 'broken', 'assistance'],
-        response: "I'm here to help! For technical support or detailed assistance:\n\n• **Email:** info@sunvests.com\n• **Phone:** +91 94120 79608\n• **Contact Form:** Available on our website\n\nPlease describe your specific issue, and our dedicated support team will assist you promptly. We provide ongoing support for all our IT, Solar, and Financial services.",
+        response: "I'm here to help! For technical support or detailed assistance:\n\n• **Email:** bck@sunvests.com\n• **Phone:** +91 94120 79608\n• **Contact Form:** Available on our website\n\nPlease describe your specific issue, and our dedicated support team will assist you promptly. We provide ongoing support for all our IT, Solar, and Financial services.",
         category: 'support'
     },
 
@@ -122,7 +122,7 @@ export const chatbotRules: ChatbotRule[] = [
     // Default Fallback
     {
         patterns: ['default_fallback_trigger'],
-        response: "I'm not quite sure how to answer that. I can help with questions about:\n\n• **IT Services** (Software Engineering, AI/ML, Data Engineering, Cloud & DevOps)\n• **Solar Power Solutions** (Installation, Maintenance, Consultation)\n• **Investment & Financial Services** (Mutual Funds, Insurance, Tax Planning)\n• **Company Information** (Contact details, leadership, locations)\n\nPlease try rephrasing your question, or contact us directly at info@sunvests.com for personalized assistance.",
+        response: "I'm not quite sure how to answer that. I can help with questions about:\n\n• **IT Services** (Software Engineering, AI/ML, Data Engineering, Cloud & DevOps)\n• **Solar Power Solutions** (Installation, Maintenance, Consultation)\n• **Investment & Financial Services** (Mutual Funds, Insurance, Tax Planning)\n• **Company Information** (Contact details, leadership, locations)\n\nPlease try rephrasing your question, or contact us directly at bck@sunvests.com for personalized assistance.",
         category: 'general'
     }
 ];
@@ -182,3 +182,4 @@ export const findBestMatch = (userInput: string): ChatbotRule => {
     // Return the designated fallback rule if no suitable match is found
     return chatbotRules.find(rule => rule.patterns.includes('default_fallback_trigger')) || chatbotRules[chatbotRules.length - 1]; // Failsafe
 };
+
